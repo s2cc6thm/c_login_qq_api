@@ -23,10 +23,10 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
     <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 <body>
-    <!-- 移动端遮罩层 -->
+
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
     
-    <!-- 顶部导航 -->
+
     <header class="top-header">
         <div style="display: flex; align-items: center;">
             <button class="menu-toggle" id="menuToggle" title="打开菜单">
@@ -56,7 +56,6 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
         </div>
     </header>
     
-    <!-- 侧边栏 -->
     <aside class="sidebar">
         <div class="nav-menu">
             <div class="nav-section">
@@ -101,14 +100,13 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
         </div>
     </aside>
 
-    <!-- Main Content -->
+
     <main class="main-content">
-        <!-- Page Header -->
+
         <div class="page-header">
             <h1 class="page-title">关于程序</h1>
         </div>
 
-        <!-- 程序介绍卡片 -->
         <div class="content-card">
             <div class="card-body">
                 <div class="text-center mb-4">
@@ -121,7 +119,6 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
 
                 <hr class="my-4">
 
-                <!-- 开发背景 -->
                 <div class="mb-4">
                     <h5 class="mb-3" style="color: var(--primary);">
                         <i class="bi bi-lightbulb me-2"></i>开发背景
@@ -135,7 +132,6 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
                     </p>
                 </div>
 
-                <!-- 程序功能 -->
                 <div class="mb-4">
                     <h5 class="mb-3" style="color: var(--primary);">
                         <i class="bi bi-stars me-2"></i>程序功能
@@ -224,7 +220,6 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
 
                 <hr class="my-4">
 
-                <!-- 作者信息 -->
                 <div class="mb-4">
                     <h5 class="mb-3" style="color: var(--primary);">
                         <i class="bi bi-person-circle me-2"></i>关于作者
@@ -247,7 +242,7 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
                     </div>
                 </div>
 
-                <!-- 反馈建议 -->
+
                 <div class="mb-4">
                     <h5 class="mb-3" style="color: var(--primary);">
                         <i class="bi bi-chat-dots me-2"></i>反馈建议
@@ -263,7 +258,7 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
                     </div>
                 </div>
 
-                <!-- 开源致谢 -->
+
                 <div>
                     <h5 class="mb-3" style="color: var(--primary);">
                         <i class="bi bi-heart me-2"></i>致谢
@@ -276,7 +271,7 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
             </div>
         </div>
 
-        <!-- 版本信息 -->
+
         <div class="content-card mt-4">
             <div class="card-body">
                 <div class="row text-center g-3">
@@ -299,12 +294,11 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // 用户下拉菜单
+
         document.getElementById('userDropdown').addEventListener('click', function() {
             this.querySelector('.dropdown-menu').classList.toggle('show');
         });
         
-        // 点击其他地方关闭下拉菜单
         document.addEventListener('click', function(e) {
             if (!e.target.closest('#userDropdown')) {
                 document.querySelectorAll('.dropdown-menu').forEach(menu => {
@@ -313,7 +307,6 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
             }
         });
         
-        // 移动端菜单切换
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.querySelector('.sidebar');
         const sidebarOverlay = document.getElementById('sidebarOverlay');
@@ -341,7 +334,6 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
         
         sidebarOverlay.addEventListener('click', closeSidebar);
         
-        // 点击侧边栏链接后自动关闭（移动端）
         document.querySelectorAll('.sidebar .nav-link').forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 1024) {
@@ -350,7 +342,6 @@ $siteName = $app->getSetting('site_name', 'QQ快捷登录');
             });
         });
         
-        // 窗口大小改变时重置侧边栏状态
         window.addEventListener('resize', function() {
             if (window.innerWidth > 1024) {
                 closeSidebar();
